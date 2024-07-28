@@ -7,7 +7,13 @@ int_list = TypeSafeList(int)
 int_list.append(1)
 int_list.append(2)
 print(int_list)  #print: [1, 2]
+try:
+    int_list[0]="A12"
+except TypeError as e:
+    print(f"int_list--->Error: {e}")  # Error: Only use (<class 'int'>,) types
 
+print(int_list)
+print(int_list[0])
 try:
     int_list.append("3")
 except TypeError as e:

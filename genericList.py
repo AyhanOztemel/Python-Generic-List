@@ -14,5 +14,19 @@ class TypeSafeList(Generic[T]):
 
     def __getitem__(self, index: int) -> T:
         return self._list[index]
+    
+    def __setitem__(self, index: int, item: T) -> None:
+        if not isinstance(item, self._allowed_types):
+            raise TypeError(f"Sadece {self._allowed_types} türleri atanabilir")
+        self._list[index] = item
+
+    def __len__(self) -> int:
+        return len(self._list)
+
+    def __iter__(self):
+        return iter(self._list)
+
+    def __str__(self):
+        return str(self._list)
 
 
