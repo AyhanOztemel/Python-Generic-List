@@ -1,6 +1,34 @@
 from genericList import TypeSafeList
 
 # Usage examples:
+print("---------------------000000000000000000000----------------------")
+#Example-->0.0.List medhods
+my_list = TypeSafeList((int, float))
+my_list.append(1)
+my_list.append(5)
+try:
+    my_list.append("A")
+except TypeError as e:
+    print(f"int_list--->Error: {e}")  
+print(my_list)#[1, 5]
+my_list.extend([2, 3.5])
+print(my_list)#[1, 5, 2, 3.5]
+for i in my_list:
+    print("i--->",i)
+my_list.insert(1, 1.5)
+print(my_list)  # [1, 1.5,5, 2, 3.5]
+print(len(my_list))
+my_list.remove(1.5)
+print(my_list)  # [1,5, 2, 3.5]
+print(my_list.pop())  # 3.5
+print(my_list)  # [1,5,2]
+my_list.sort()
+print(my_list)
+my_list.reverse()
+print(my_list)
+my_list.clear()
+print(my_list)#[]
+
 print("---------------------1111111111111111111111----------------------")
 # Example-->1.1. single type (int)
 int_list = TypeSafeList(int)
